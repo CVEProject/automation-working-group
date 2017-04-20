@@ -74,7 +74,7 @@
         "ASSIGNER": { "$ref": "#/definitions/email_address" },
         "REPLACED_BY": { "type": "array",
                          "items": { "$ref": "#/definitions/cve_id" } },
-        "STATE": { "enum": [ "PUBLIC", "RESERVED", "REPLACED_BY", "SPLIT_FROM", "MERGED_TO" ] },
+        "STATE": { "enum": [ "PUBLIC", "RESERVED", "REPLACED_BY", "SPLIT_FROM", "MERGED_TO", "REJECT" ] },
         "TITLE": { "type": "string" }
       }
     },
