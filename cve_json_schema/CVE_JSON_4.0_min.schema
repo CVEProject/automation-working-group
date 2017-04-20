@@ -63,9 +63,19 @@
     "CVE_data_meta": {
       "type":"object",
       "required": [ "ID", "ASSIGNER" ],
-      "properties": { 
+      "properties": {
+        "UPDATED": { "type": "string", "format": "date-time" },
+        "SERIAL": { "type": "number", "minimum": 1 },
         "ID": { "$ref": "#/definitions/cve_id" },
-        "ASSIGNER": { "$ref": "#/definitions/email_address" }
+        "DATE_REQUESTED": { "type": "string", "format": "date-time" },
+        "DATE_ASSIGNED": { "type": "string", "format": "date-time" },
+        "DATE_PUBLIC": { "type": "string", "format": "date-time" },
+        "REQUESTER": { "$ref": "#/definitions/email_address" },
+        "ASSIGNER": { "$ref": "#/definitions/email_address" },
+        "REPLACED_BY": { "type": "array",
+                         "items": { "$ref": "#/definitions/cve_id" } },
+        "STATE": { "enum": [ "PUBLIC", "RESERVED", "REPLACED_BY", "SPLIT_FROM", "MERGED_TO" ] },
+        "TITLE": { "type": "string" }
       }
     },
     "affects": {
