@@ -62,7 +62,10 @@
   },
 
   "type": "object",
-  "required": [ "data_type", "data_format", "data_version", "CVE_data_meta", "affects", "problemtype", "references", "description" ],
+  "required": [
+      "data_type", "data_format", "data_version", "CVE_data_meta",
+      "affects", "problemtype", "references", "description"
+  ],
   "properties": {
     "data_type": {
          "description": "Identifies what kind of data is held in this JSON file",
@@ -81,57 +84,13 @@
       "required": [ "ID", "ASSIGNER" ],
       "description": "Meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, when it was assigned, the current state and so on",
       "properties": {
-        "UPDATED": {
-            "description": "Last update time for this entry",
-            "type": "string", "format": "date-time"
-        },
-        "SERIAL": {
-            "type": "number",
-            "description": "Increments every time an entry is changed",
-            "minimum": 1
-        },
         "ID": {
             "description": "The CVE ID in the format listed in http://cve.mitre.org/cve/identifiers/syntaxchange.html#new",
             "$ref": "#/definitions/cve_id"
         },
-        "DATE_REQUESTED": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The date/time this issue was requested"
-        },
-        "DATE_ASSIGNED": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The date/time this issue was assigned"
-        },
-        "DATE_PUBLIC": {
-            "type": "string",
-            "format": "date-time",
-            "description": "The date/time this issue went public, if known"
-        },
-        "REQUESTER": {
-            "$ref": "#/definitions/email_address",
-            "description": "The requester of the CVE"
-        },
         "ASSIGNER": {
             "$ref": "#/definitions/email_address",
             "description": "The assigner of the CVE"
-        },
-        "REPLACED_BY": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/cve_id"
-            },
-            "description": "CVE-IDs that replaced this CVE"
-        },
-        "STATE": {
-            "enum": ["PUBLIC", "RESERVED", "REPLACED_BY", "SPLIT_FROM",
-                     "MERGED_TO", "REJECT"],
-            "description": "State of CVE"
-        },
-        "TITLE": {
-            "type": "string",
-            "description": "Short title of the CVE"
         }
       }
     },
