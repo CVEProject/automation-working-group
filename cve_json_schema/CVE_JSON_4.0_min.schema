@@ -12,21 +12,28 @@
     },
     "product": {
       "type": "object",
-      "required": [ "product_name", "version" ],
+      "required": [
+          "product_name",
+          "version"
+      ],
       "properties": {
         "product_name": {
             "type": "string"
         },
         "version": {
           "type": "object",
-          "required": [ "version_data" ],
+          "required": [
+              "version_data"
+          ],
           "properties": {
             "version_data": {
               "type": "array",
               "minItems": 1,
               "items": {
                 "type": "object",
-                "required": [ "version_value" ],
+                "required": [
+                    "version_value"
+                ],
                 "properties": {
                   "version_value": {
                       "type": "string"
@@ -43,7 +50,9 @@
     },
     "reference": {
       "type": "object",
-      "required": [ "url" ],
+      "required": [
+          "url"
+      ],
       "properties": {
         "url": {
           "type": "string",
@@ -53,35 +62,57 @@
     },
     "lang_string": {
       "type": "object",
-      "required": [ "lang", "value" ],
+      "required": [
+          "lang",
+          "value"
+      ],
       "properties": {
-        "lang": { "type": "string" },
-        "value": { "type": "string" }
+        "lang": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        }
       }
     }
   },
 
   "type": "object",
   "required": [
-      "data_type", "data_format", "data_version", "CVE_data_meta",
-      "affects", "problemtype", "references", "description"
+      "data_type",
+      "data_format",
+      "data_version",
+      "CVE_data_meta",
+      "affects",
+      "problemtype",
+      "references",
+      "description"
   ],
   "properties": {
     "data_type": {
          "description": "Identifies what kind of data is held in this JSON file",
-         "enum": [ "CVE" ]
+         "enum": [
+             "CVE"
+         ]
      },
     "data_format": {
         "description": "Identifies what data format is used in this JSON file",
-        "enum": [ "MITRE" ]
+        "enum": [
+            "MITRE"
+        ]
     },
     "data_version": {
         "description": "Identifies which version of the data format is in use",
-        "enum": [ "4.0" ]
+        "enum": [
+            "4.0"
+        ]
     },
     "CVE_data_meta": {
       "type":"object",
-      "required": [ "ID", "ASSIGNER" ],
+      "required": [
+          "ID",
+          "ASSIGNER"
+      ],
       "description": "Meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, when it was assigned, the current state and so on",
       "properties": {
         "ID": {
@@ -97,12 +128,16 @@
     "affects": {
       "type": "object",
       "description": "Affected vendors, their affected technologies, products, hardware, etc.",
-      "required": [ "vendor" ],
+      "required": [
+          "vendor"
+      ],
       "properties": {
         "vendor": {
           "type": "object",
           "description": "Container for affected vendor",
-          "required": [ "vendor_data" ],
+          "required": [
+              "vendor_data"
+          ],
           "properties": {
             "vendor_data": {
               "type": "array",
@@ -110,7 +145,10 @@
               "minItems": 1,
               "items": {
                 "type": "object",
-                "required": [ "vendor_name", "product" ],
+                "required": [
+                    "vendor_name",
+                    "product"
+                ],
                 "properties": {
                   "vendor_name": {
                       "type": "string",
@@ -119,7 +157,9 @@
                   "product": {
                     "type": "object",
                     "description": "Affected technologies, products, hardware, etc.",
-                    "required": [ "product_data" ],
+                    "required": [
+                        "product_data"
+                    ],
                     "properties": {
                       "product_data": {
                         "type": "array",
@@ -141,14 +181,18 @@
     "problemtype": {
       "type": "object",
       "description": "Problem type information (e.g. CWE identifier, OWASP etc.)",
-      "required": [ "problemtype_data" ],
+      "required": [
+          "problemtype_data"
+      ],
       "properties": {
         "problemtype_data": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [ "description" ],
+            "required": [
+                "description"
+            ],
             "properties": {
               "description": {
                 "type": "array",
@@ -165,7 +209,9 @@
     "references": {
       "type": "object",
       "description": "Reference data in the form of URLs or serialized/compressed file objects",
-      "required": [ "reference_data" ],
+      "required": [
+          "reference_data"
+      ],
       "properties": {
         "reference_data": {
           "type": "array",
@@ -179,7 +225,9 @@
     "description": {
       "type": "object",
       "description": "Description of the issue",
-      "required": [ "description_data" ],
+      "required": [
+          "description_data"
+      ],
       "properties": {
         "description_data": {
           "type": "array",
