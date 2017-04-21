@@ -234,7 +234,7 @@ JSON data type: object
 
 This is an array of version values (vulnerable and not); we use an array so that we can make multiple statements about the same product and they are separate (if we used a JSON object we'd essentially be keying on the product name and they would have to overlap). Also this allows things like data_version or description to be applied directly to the product entry.
 
-Must contain: One of the product definitions must contains at least one version definition (so there must be a minimum of one full declaration of a vulnerable product)
+Must contain: One of the product definitions must contain at least one version definition (so there must be a minimum of one full declaration of a vulnerable product)
 
 Mandatory in: product
 
