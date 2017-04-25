@@ -755,318 +755,318 @@ The following are a minimal example (as defined by MITRE in the CVE CNA Guidelin
 
 ```
 {
-	"data_type": "CVE",
-	"data_format": "MITRE",
-	"data_version": "4.0",
-	"CVE_data_meta": {
-		"ID": "CVE-YYYY-NNNNNN"
-		"ASSIGNER": "Example email address"
-	},
-	"affects": {
-		"vendor": {
-			"vendor_data": [
-				{
-					"vendor_name": "Example corp.",
-					"product": {
-						"product_data": [
-							{
-								"product_name": "Example product",
-								"version": {
-									"version_data": [
-										{
-											"version_value": "1.0"
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			]
-		}
-	},
-	"problemtype":{
-		"problemtype_data":[
-			{
-				"description":[
-					{
-						"lang": "string ISO 639-2",
-						"value":"string description of problem_type"
-					}
-				]
-			}
-		]
-	},
-	"references":{
-		"reference_data":[
-			{
-				"url":"string for url location"
-			}
-		]
-	},
-	"description":{
-		"description_data":[
-			{
-				"lang": "string ISO 639-2",
-				"value":"string description of vulnerability"
-			}
-		]
-	}
+  "data_type": "CVE",
+  "data_format": "MITRE",
+  "data_version": "4.0",
+  "CVE_data_meta": {
+    "ID": "CVE-YYYY-NNNNNN"
+    "ASSIGNER": "Example email address"
+  },
+  "affects": {
+    "vendor": {
+      "vendor_data": [
+        {
+          "vendor_name": "Example corp.",
+          "product": {
+            "product_data": [
+              {
+                "product_name": "Example product",
+                "version": {
+                  "version_data": [
+                    {
+                      "version_value": "1.0"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "problemtype":{
+    "problemtype_data":[
+      {
+        "description":[
+          {
+            "lang": "string ISO 639-2",
+            "value":"string description of problem_type"
+          }
+        ]
+      }
+    ]
+  },
+  "references":{
+    "reference_data":[
+      {
+        "url":"string for url location"
+      }
+    ]
+  },
+  "description":{
+    "description_data":[
+      {
+        "lang": "string ISO 639-2",
+        "value":"string description of vulnerability"
+      }
+    ]
+  }
 }
 ```
 ## Minimal example needed for CVE [single entry]
 ```
 {
-	"data_type": "CVE",
-	"data_format": "MITRE",
-	"data_version": "4.0",
-	"CVE_data_meta": {
-		"ID": "CVE-2005-4900",
-		"ASSIGNER": "cve@mitre.org"
-	},
-	"affects": {
-		"vendor": {
-			"vendor_data": [
-				{
-					"vendor_name": " ",
-					"product": {
-						"product_data": [
-							{
-								"product_name": "sha-1",
-								"version": {
-									"version_data": [
-										{
-											"version_value": "sha-1"
-										}
-									]
-								}
-							}
-						]
-					}
-				}
-			]
-		}
-	},
-	"problemtype":{
-		"problemtype_data":[
-			{
-				"description":[
-					{
-						"lang": "eng",
-						"value":"some sort of cryptography problem"
-					}
-				]
-			}
-		]
-	},
-	"references":{
-		"reference_data":[
-			{
-				"url":"http://ia.cr/2007/474"
-			},
-			{
-				"url":"http://shattered.io/"
-			},
-			{
-				"url":"http://www.cwi.nl/news/2017/cwi-and-google-announce-first-collision-industry-security-standard-sha-1"
-			},
-			{
-				"url":"https://arstechnica.com/security/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/"
-			},
-			{
-				"url":"https://security.googleblog.com/2015/12/an-update-on-sha-1-certificates-in.html"
-			},
-			{
-				"url":"https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html"
-			},
-			{
-				"url":"https://sites.google.com/site/itstheshappening"
-			},
-			{
-				"url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
-			},
-			{
-				"url":"https://www.schneier.com/blog/archives/2005/08/new_cryptanalyt.html"
-			}
-		]
-	},
-	"description":{
-		"description_data":[
-			{
-				"lang": "eng",
-				"value":"SHA-1 is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of SHA-1 in TLS 1.2. NOTE: this CVE exists to provide a common identifier for referencing this SHA-1 issue; the existence of an identifier is not, by itself, a technology recommendation."
-			}
-		]
-	}
+  "data_type": "CVE",
+  "data_format": "MITRE",
+  "data_version": "4.0",
+  "CVE_data_meta": {
+    "ID": "CVE-2005-4900",
+    "ASSIGNER": "cve@mitre.org"
+  },
+  "affects": {
+    "vendor": {
+      "vendor_data": [
+        {
+          "vendor_name": " ",
+          "product": {
+            "product_data": [
+              {
+                "product_name": "sha-1",
+                "version": {
+                  "version_data": [
+                    {
+                      "version_value": "sha-1"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "problemtype":{
+    "problemtype_data":[
+      {
+        "description":[
+          {
+            "lang": "eng",
+            "value":"some sort of cryptography problem"
+          }
+        ]
+      }
+    ]
+  },
+  "references":{
+    "reference_data":[
+      {
+        "url":"http://ia.cr/2007/474"
+      },
+      {
+        "url":"http://shattered.io/"
+      },
+      {
+        "url":"http://www.cwi.nl/news/2017/cwi-and-google-announce-first-collision-industry-security-standard-sha-1"
+      },
+      {
+        "url":"https://arstechnica.com/security/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/"
+      },
+      {
+        "url":"https://security.googleblog.com/2015/12/an-update-on-sha-1-certificates-in.html"
+      },
+      {
+        "url":"https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html"
+      },
+      {
+        "url":"https://sites.google.com/site/itstheshappening"
+      },
+      {
+        "url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
+      },
+      {
+        "url":"https://www.schneier.com/blog/archives/2005/08/new_cryptanalyt.html"
+      }
+    ]
+  },
+  "description":{
+    "description_data":[
+      {
+        "lang": "eng",
+        "value":"SHA-1 is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of SHA-1 in TLS 1.2. NOTE: this CVE exists to provide a common identifier for referencing this SHA-1 issue; the existence of an identifier is not, by itself, a technology recommendation."
+      }
+    ]
+  }
 }
 ```
 
 ## Minimal example needed for CVE [multiple entries]
 ```
 [
-	{
-		"data_type": "CVE",
-		"data_format": "MITRE",
-		"data_version": "4.0",
-		"CVE_data_meta": {
-			"ID": "CVE-2005-4900",
-			"ASSIGNER": "cve@mitre.org"
-		},
-		"affects": {
-			"vendor": {
-				"vendor_data": [
-					{
-						"vendor_name": " ",
-						"product": {
-							"product_data": [
-								{
-									"product_name": "sha-1",
-									"version": {
-										"version_data": [
-											{
-												"version_value": " "
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				]
-			}
-		},
-		"problemtype":{
-			"problemtype_data":[
-				{
-					"description":[
-						{
-							"lang": "eng",
-							"value":"some sort of cryptography problem"
-						}
-					]
-				}
-			]
-		},
-		"references":{
-			"reference_data":[
-				{
-					"url":"http://ia.cr/2007/474"
-				},
-				{
-					"url":"http://shattered.io/"
-				},
-				{
-					"url":"http://www.cwi.nl/news/2017/cwi-and-google-announce-first-collision-industry-security-standard-sha-1"
-				},
-				{
-					"url":"https://arstechnica.com/security/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/"
-				},
-				{
-					"url":"https://security.googleblog.com/2015/12/an-update-on-sha-1-certificates-in.html"
-				},
-				{
-					"url":"https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html"
-				},
-				{
-					"url":"https://sites.google.com/site/itstheshappening"
-				},
-				{
-					"url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
-				},
-				{
-					"url":"https://www.schneier.com/blog/archives/2005/08/new_cryptanalyt.html"
-				}
-			]
-		},
-		"description":{
-			"description_data":[
-				{
-					"lang": "eng",
-					"value":"SHA-1 is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of SHA-1 in TLS 1.2. NOTE: this CVE exists to provide a common identifier for referencing this SHA-1 issue; the existence of an identifier is not, by itself, a technology recommendation."
-				}
-			]
-		}
-	},
-	{
-		"data_type": "CVE",
-		"data_format": "MITRE",
-		"data_version": "4.0",
-		"CVE_data_meta": {
-			"ID": "CVE-2004-2761",
-			"ASSIGNER": "cve@mitre.org"
-		},
-		"affects": {
-			"vendor": {
-				"vendor_data": [
-					{
-						"vendor_name": " ",
-						"product": {
-							"product_data": [
-								{
-									"product_name": "MD5",
-									"version": {
-										"version_data": [
-											{
-												"version_value": " "
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				]
-			}
-		},
-		"problemtype":{
-			"problemtype_data":[
-				{
-					"description":[
-						{
-							"lang": "eng",
-							"value":"other"
-						}
-					]
-				}
-			]
-		},
-		"references":{
-			"reference_data":[
-				{
-					"url":"http://blog.mozilla.com/security/2008/12/30/md5-weaknesses-could-lead-to-ce..."
-				},
-				{
-					"url":"http://blogs.technet.com/swi/archive/2008/12/30/information-regarding-md5-c..."
-				},
-				{
-					"url":"http://www.doxpara.com/research/md5/md5_someday.pdf"
-				},
-				{
-					"url":"http://www.microsoft.com/technet/security/advisory/961509.mspx"
-				},
-				{
-					"url":"http://www.phreedom.org/research/rogue-ca/"
-				},
-				{
-					"url":"http://www.win.tue.nl/hashclash/SoftIntCodeSign/"
-				},
-				{
-					"url":"http://www.win.tue.nl/hashclash/rogue-ca/"
-				},
-				{
-					"url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
-				}
-			]
-		},
-		"description":{
-			"description_data":[
-				{
-					"lang": "eng",
-					"value":"The MD5 Message-Digest Algorithm is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of MD5 in the signature algorithm of an X.509 certificate."
-				}
-			]
-		}
-	}
+  {
+    "data_type": "CVE",
+    "data_format": "MITRE",
+    "data_version": "4.0",
+    "CVE_data_meta": {
+      "ID": "CVE-2005-4900",
+      "ASSIGNER": "cve@mitre.org"
+    },
+    "affects": {
+      "vendor": {
+        "vendor_data": [
+          {
+            "vendor_name": " ",
+            "product": {
+              "product_data": [
+                {
+                  "product_name": "sha-1",
+                  "version": {
+                    "version_data": [
+                      {
+                        "version_value": " "
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "problemtype":{
+      "problemtype_data":[
+        {
+          "description":[
+            {
+              "lang": "eng",
+              "value":"some sort of cryptography problem"
+            }
+          ]
+        }
+      ]
+    },
+    "references":{
+      "reference_data":[
+        {
+          "url":"http://ia.cr/2007/474"
+        },
+        {
+          "url":"http://shattered.io/"
+        },
+        {
+          "url":"http://www.cwi.nl/news/2017/cwi-and-google-announce-first-collision-industry-security-standard-sha-1"
+        },
+        {
+          "url":"https://arstechnica.com/security/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/"
+        },
+        {
+          "url":"https://security.googleblog.com/2015/12/an-update-on-sha-1-certificates-in.html"
+        },
+        {
+          "url":"https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html"
+        },
+        {
+          "url":"https://sites.google.com/site/itstheshappening"
+        },
+        {
+          "url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
+        },
+        {
+          "url":"https://www.schneier.com/blog/archives/2005/08/new_cryptanalyt.html"
+        }
+      ]
+    },
+    "description":{
+      "description_data":[
+        {
+          "lang": "eng",
+          "value":"SHA-1 is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of SHA-1 in TLS 1.2. NOTE: this CVE exists to provide a common identifier for referencing this SHA-1 issue; the existence of an identifier is not, by itself, a technology recommendation."
+        }
+      ]
+    }
+  },
+  {
+    "data_type": "CVE",
+    "data_format": "MITRE",
+    "data_version": "4.0",
+    "CVE_data_meta": {
+      "ID": "CVE-2004-2761",
+      "ASSIGNER": "cve@mitre.org"
+    },
+    "affects": {
+      "vendor": {
+        "vendor_data": [
+          {
+            "vendor_name": " ",
+            "product": {
+              "product_data": [
+                {
+                  "product_name": "MD5",
+                  "version": {
+                    "version_data": [
+                      {
+                        "version_value": " "
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "problemtype":{
+      "problemtype_data":[
+        {
+          "description":[
+            {
+              "lang": "eng",
+              "value":"other"
+            }
+          ]
+        }
+      ]
+    },
+    "references":{
+      "reference_data":[
+        {
+          "url":"http://blog.mozilla.com/security/2008/12/30/md5-weaknesses-could-lead-to-ce..."
+        },
+        {
+          "url":"http://blogs.technet.com/swi/archive/2008/12/30/information-regarding-md5-c..."
+        },
+        {
+          "url":"http://www.doxpara.com/research/md5/md5_someday.pdf"
+        },
+        {
+          "url":"http://www.microsoft.com/technet/security/advisory/961509.mspx"
+        },
+        {
+          "url":"http://www.phreedom.org/research/rogue-ca/"
+        },
+        {
+          "url":"http://www.win.tue.nl/hashclash/SoftIntCodeSign/"
+        },
+        {
+          "url":"http://www.win.tue.nl/hashclash/rogue-ca/"
+        },
+        {
+          "url":"https://www.schneier.com/blog/archives/2005/02/sha1_broken.html"
+        }
+      ]
+    },
+    "description":{
+      "description_data":[
+        {
+          "lang": "eng",
+          "value":"The MD5 Message-Digest Algorithm is not collision resistant, which makes it easier for context-dependent attackers to conduct spoofing attacks, as demonstrated by attacks on the use of MD5 in the signature algorithm of an X.509 certificate."
+        }
+      ]
+    }
+  }
 
 ]
 ```
