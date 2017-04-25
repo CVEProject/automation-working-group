@@ -1,62 +1,66 @@
 #!/usr/bin/env python
-
-###################################################################################
-###################### Python Script to validate JSON file ########################
-###################################################################################
-
-### Usage ###
-
-# To run this script you must have the following:
-#	Python 2.7
-#	Python modules json and jsonschema installed on your machine.
-
-# Simply run following command in terminal to validate json file against schema:
-
-# ./cmdlinejsonvalidator.py example.json jsonschema.json
-
-# Where example will be the name of your JSON file and jsonschema is the schema 
-# you wish to compare the json file against.
-
-# ***NOTE***
-# If you do not place the script in same directory as the jsonschema file and 
-# json file you will need to use absolute/relative path names to the files as
-# your arguments.
-
-###################################################################################
-###################################################################################
 import sys
-import json
-import jsonschema
-from jsonschema import validate
-from jsonschema import Draft4Validator
+import argparse
+
+try:
+    import json
+except ImportError:
+    try:
+        import simplejson as json
+    except ImportError:
+        json = None
+
+try:
+    import jsonschema
+    import jsonschema.exceptions
+
+except ImportError:
+    jsonschema = None
 
 
-def jsonvalidation(json_doc_path, json_schema_path):
+def jsonvalidation(json_doc_paths, json_schema_path):
     with open(json_schema_path, 'r') as fp:
         schema_doc = json.load(fp)
 
-    # Open the file for reading
-    with open(json_doc_path, 'r') as fp:
-        json_doc = json.load(fp)
+    for json_doc_path in json_doc_paths:
+        try:
+            with open(json_doc_path, 'r') as fp:
+                json_doc = json.load(fp)
 
-    try:
-        validate(json_doc, schema_doc)
-        sys.stdout.write("Record passed validation \n")
-    except jsonschema.exceptions.ValidationError as incorrect:
-        v = Draft4Validator(schema_doc)
-        errors = sorted(v.iter_errors(json_doc), key=lambda e: e.path)
-        for error in errors:
-            sys.stderr.write("Record did not pass: \n")
-            sys.stderr.write(str(error.message) + "\n")
+            jsonschema.validate(json_doc, schema_doc)
+            sys.stdout.write("Record `%s` passed validation\n" % json_doc_path)
+
+        except jsonschema.exceptions.ValidationError as incorrect:
+            v = jsonschema.Draft4Validator(schema_doc)
+
+            errors = sorted(v.iter_errors(json_doc), key=lambda e: e.path)
+            for error in errors:
+                sys.stderr.write("Record `%s` did not pass:\n" % json_doc_path)
+                sys.stderr.write(str(error.message) + "\n")
+
+        except Exception as ex:
+            sys.stderr.write("Record `%s` did not pass: %s\n" % (json_doc_path, ex))
 
 
 def main():
-    import argparse
+    parser = argparse.ArgumentParser(
+        description = "Validate one of more JSON files against JSON schema"
+    )
 
-    parser = argparse.ArgumentParser(description='validate a JSON file')
-    parser.add_argument('jsondoc', type=str, help='path/to/doc.json')
-    parser.add_argument('schema', type=str, help='path/to/schema.json')
+    parser.add_argument('schema', type=str,
+                        help='Path to JSON schema file to use')
+    parser.add_argument('jsondoc', type=str, nargs='+',
+                        help='Path to JSON file(s) to verify against given JSON schema')
+
     args = parser.parse_args()
+
+    if not json:
+        sys.stderr.write("Please install the `simplejson` package\n")
+        sys.exit(1)
+
+    if not jsonschema:
+        sys.stderr.write("Please install the `jsonschema` package\n")
+        sys.exit(1)
 
     jsonvalidation(args.jsondoc, args.schema)
 
