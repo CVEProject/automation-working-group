@@ -18,27 +18,30 @@ Subtracted leap seconds should be acceptable as timestamps will only be off by a
 
 ## Unicode
 
-Data may be Unicode encoded, titles, descriptions, researcher names, version numbers (people use alphabetical versioning, so we should expect this but in other character sets/languages). Data should no longer be assumed to be simple ASCII all the time. 
+Data is JSON fields is always in Unicode, the whole JSON document is serialized into UTF-8. Examples include fields like titles, descriptions, researcher names, version numbers (people use alphabetical versioning, so we should expect this but in other character sets/languages).
 
-## UUencoded data
+## Uuencoded data
 
-File objects associated with CVEs may sometimes be embedded within the JSON data as a UUncoded object (optionally zip compressed and password protected in the case where the data may trigger an AV scanner for example). Again, this data may be dangerous or actively hostile depending on what software you use to process it.
+File objects associated with CVEs may sometimes be embedded within the JSON data as a Uuencoded object (optionally zip-compressed and password protected in the case where the data may trigger an AV scanner for example). Again, this data may be dangerous or actively hostile depending on what software you use to process it.
 
 ## Base64 data
 
-File objects associated with CVEs may sometimes be embedded within the JSON data as a Base64 object (optionally zip compressed and password protected in the case where the data may trigger an AV scanner for example). Again, this data may be dangerous or actively hostile depending on what software you use to process it.
+File objects associated with CVEs may sometimes be embedded within the JSON data as a Base64 object (optionally zip-compressed and password protected in the case where the data may trigger an AV scanner for example). Again, this data may be dangerous or actively hostile depending on what software you use to process it.
 
 ## Multiple line strings
 
-For data (such as gpg keys, copies of text, etc.) that consists of a multiline string we will simply use "\n" to insert line breaks (JSON strings cannot have actual line breaks). An example of code that can generate such a JSON object is:
+For data (such as GPG/PGP keys, copies of text, etc.) that consists of a multiline string we will simply use "\n" to insert line breaks (JSON fields cannot have actual line breaks). An example of code that can generate such a JSON object is:
 
 ```
 #!/usr/bin/python
 import json
-with open(“multi-line.txt", "r") as file:
-    multilinestring=file.read()
-jsonexample={“string_name”: multilinestring}
-print json.dumps(jsonexample)
+
+with open(“multi-line.txt") as file_obj:
+    multiline_string = file_obj.read()
+
+json_example = {“string_name”: multiline_string}
+
+print(json.dumps(json_example))
 ```
 
 This is not ideally human readable, but there is no good simple solution for this unfortunately.
@@ -155,13 +158,13 @@ JSON data type: string
 
 ### REPLACED_BY
 
-replaced by data - a single CVE or list of CVEs (comma separated) 
+replaced by data - a single CVE or list of CVEs (comma separated), format is CVE-YEAR-NNNNNNN - the CVE ID in the format listed in http://cve.mitre.org/cve/identifiers/syntaxchange.html#new
 
 JSON data type: string
 
 ### STATE
 
-State of CVE - PUBLIC, RESERVED, REPLACED_BY, SPLIT_FROM, MERGED_TO
+State of CVE - PUBLIC, RESERVED, REPLACED_BY, SPLIT_FROM, MERGED_TO, REJECT
 
 JSON data type: string
 
@@ -231,7 +234,7 @@ JSON data type: object
 
 This is an array of version values (vulnerable and not); we use an array so that we can make multiple statements about the same product and they are separate (if we used a JSON object we'd essentially be keying on the product name and they would have to overlap). Also this allows things like data_version or description to be applied directly to the product entry.
 
-Must contain: One of the product definitions must contains at least one version definition (so there must be a minimum of one full declaration of a vulnerable product)
+Must contain: One of the product definitions must contain at least one version definition (so there must be a minimum of one full declaration of a vulnerable product)
 
 Mandatory in: product
 

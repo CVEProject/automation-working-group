@@ -12,21 +12,35 @@
     },
     "product": {
       "type": "object",
-      "required": [ "product_name", "version" ],
+      "required": [
+          "product_name",
+          "version"
+      ],
       "properties": {
-        "product_name": { "type": "string" },
+        "product_name": {
+            "type": "string"
+        },
         "version": {
           "type": "object",
-          "required": [ "version_data" ],
+          "required": [
+              "version_data"
+          ],
           "properties": {
             "version_data": {
               "type": "array",
               "minItems": 1,
               "items": {
                 "type": "object",
-                "required": [ "version_value" ],
+                "required": [
+                    "version_value"
+                ],
                 "properties": {
-                  "version_value": { "type": "string" }
+                  "version_value": {
+                      "type": "string"
+                  },
+                  "version_affected": {
+                      "type": "string"
+                  }
                 }
               }
             }
@@ -36,7 +50,9 @@
     },
     "reference": {
       "type": "object",
-      "required": [ "url" ],
+      "required": [
+          "url"
+      ],
       "properties": {
         "url": {
           "type": "string",
@@ -46,52 +62,112 @@
     },
     "lang_string": {
       "type": "object",
-      "required": [ "lang", "value" ],
+      "required": [
+          "lang",
+          "value"
+      ],
       "properties": {
-        "lang": { "type": "string" },
-        "value": { "type": "string" }
+        "lang": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        }
       }
     }
   },
 
   "type": "object",
-  "required": [ "data_type", "data_format", "data_version", "CVE_data_meta", "affects", "problemtype", "references", "description" ],
+  "required": [
+      "data_type",
+      "data_format",
+      "data_version",
+      "CVE_data_meta",
+      "affects",
+      "problemtype",
+      "references",
+      "description"
+  ],
   "properties": {
-    "data_type": { "enum": [ "CVE" ] },
-    "data_format": { "enum": [ "MITRE" ] },
-    "data_version": { "enum": [ "4.0" ] },
+    "data_type": {
+         "description": "Identifies what kind of data is held in this JSON file",
+         "enum": [
+             "CVE"
+         ]
+     },
+    "data_format": {
+        "description": "Identifies what data format is used in this JSON file",
+        "enum": [
+            "MITRE"
+        ]
+    },
+    "data_version": {
+        "description": "Identifies which version of the data format is in use",
+        "enum": [
+            "4.0"
+        ]
+    },
     "CVE_data_meta": {
       "type":"object",
-      "required": [ "ID", "ASSIGNER" ],
-      "properties": { 
-        "ID": { "$ref": "#/definitions/cve_id" },
-        "ASSIGNER": { "$ref": "#/definitions/email_address" }
+      "required": [
+          "ID",
+          "ASSIGNER"
+      ],
+      "description": "Meta data about the CVE ID such as the CVE ID, who requested it, who assigned it, when it was requested, when it was assigned, the current state and so on",
+      "properties": {
+        "ID": {
+            "description": "The CVE ID in the format listed in http://cve.mitre.org/cve/identifiers/syntaxchange.html#new",
+            "$ref": "#/definitions/cve_id"
+        },
+        "ASSIGNER": {
+            "$ref": "#/definitions/email_address",
+            "description": "The assigner of the CVE"
+        }
       }
     },
     "affects": {
       "type": "object",
-      "required": [ "vendor" ],
+      "description": "Affected vendors, their affected technologies, products, hardware, etc.",
+      "required": [
+          "vendor"
+      ],
       "properties": {
         "vendor": {
           "type": "object",
-          "required": [ "vendor_data" ],
+          "description": "Container for affected vendor",
+          "required": [
+              "vendor_data"
+          ],
           "properties": {
             "vendor_data": {
               "type": "array",
+              "description": "Version values (vulnerable and not); different entities can make statements about the same vendor",
               "minItems": 1,
               "items": {
                 "type": "object",
-                "required": [ "vendor_name", "product" ],
+                "required": [
+                    "vendor_name",
+                    "product"
+                ],
                 "properties": {
-                  "vendor_name": { "type": "string" },
+                  "vendor_name": {
+                      "type": "string",
+                      "description": "The vendor name"
+                  },
                   "product": {
                     "type": "object",
-                    "required": [ "product_data" ],
+                    "description": "Affected technologies, products, hardware, etc.",
+                    "required": [
+                        "product_data"
+                    ],
                     "properties": {
                       "product_data": {
                         "type": "array",
+                        "description": "Array of version values (vulnerable and not); there can be multiple statements about the same product",
                         "minItems": 1,
-                        "items": { "$ref": "#/definitions/product" }
+                        "items": {
+                            "$ref": "#/definitions/product"
+                        }
                       }
                     }
                   }
@@ -104,19 +180,26 @@
     },
     "problemtype": {
       "type": "object",
-      "required": [ "problemtype_data" ],
+      "description": "Problem type information (e.g. CWE identifier, OWASP etc.)",
+      "required": [
+          "problemtype_data"
+      ],
       "properties": {
         "problemtype_data": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [ "description" ],
+            "required": [
+                "description"
+            ],
             "properties": {
               "description": {
                 "type": "array",
                 "minItems": 1,
-                "items": { "$ref": "#/definitions/lang_string" }
+                "items": {
+                    "$ref": "#/definitions/lang_string"
+                }
               }
             }
           }
@@ -125,23 +208,33 @@
     },
     "references": {
       "type": "object",
-      "required": [ "reference_data" ],
+      "description": "Reference data in the form of URLs or serialized/compressed file objects",
+      "required": [
+          "reference_data"
+      ],
       "properties": {
         "reference_data": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/definitions/reference" }
+          "items": {
+              "$ref": "#/definitions/reference"
+          }
         }
       }
     },
     "description": {
       "type": "object",
-      "required": [ "description_data" ],
+      "description": "Description of the issue",
+      "required": [
+          "description_data"
+      ],
       "properties": {
         "description_data": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/definitions/lang_string" }
+          "items": {
+              "$ref": "#/definitions/lang_string"
+          }
         }
       }
     }
