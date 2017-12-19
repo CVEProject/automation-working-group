@@ -1,6 +1,6 @@
-# DRAFT - CVE ID JSON File Format 4.0
+# DRAFT - CVE ID JSON File Format 4.0 EXPERIMENTAL
 
-This describes the CVE ID JSON format version 4.0, and this file format primarily covers CVE ID but also CVE Mentors and CNAs.
+This describes the CVE ID JSON format version 4.0 EXPERIMENTAL, and this file format primarily covers CVE ID but also CVE Mentors and CNAs.
 
 CVE_* is a reserved keyword. Essentially every CVE ID file is a JSON Object that contains more top level objects which in turn contain objects/arrays/booleans/etc. We have some required top level objects: CVE_data_type (what is this file?), CVE_data_format (who’s format is it in?) and CVE_data_version (what version of the data format is this?) for all types.
 
@@ -215,6 +215,10 @@ The vendor name
 
 See the product for a full definition
 
+#### service
+
+See the service for a full definition
+
 ## product
 
 This is the container for affected technologies, products, hardware, etc.
@@ -326,6 +330,83 @@ Mandatory in: affects_SWID
 Optional in: none
 
 JSON data type: array that contains objects
+
+## service - EXPERIMENTAL
+
+This is the container for affected services (e.g. Cloud providers using the affected software in a way that affects their services).
+
+Must contain: At least one affected item by name (similar to CNA requirement: [PRODUCT])
+
+Mandatory in: vendor
+
+Optional in: none
+
+JSON data type: object
+
+### service_data
+
+This is an array of version values (vulnerable and not); we use an array so that we can make multiple statements about the same product and they are separate (if we used a JSON object we'd essentially be keying on the product name and they would have to overlap). Also this allows things like data_version or description to be applied directly to the product entry.
+
+Must contain: One of the product definitions must contains at least one version definition (so there must be a minimum of one full declaration of a vulnerable product)
+
+Mandatory in: product
+
+Optional in: none
+
+JSON data type: array that contains objects
+
+#### service_name
+
+The product name
+
+#### version
+
+See the CVE_version for a full definition
+
+#### Primary stakeholders
+
+* Dev
+* Ops
+* Infosec
+* Deployment
+
+#### Primary Actions
+
+* NotificationOn
+* WorkStartedOn
+* WorkCompletedOn
+* ConfirmationStartedOn
+* ConfirmationCompletedOn
+
+#### Example of primary stakeholder and action
+
+The above two categories are merged as needed, so for example a cloud provider:
+
+* InfosecNotificationOn: DATE-TIMESTAMP
+* DevWorkStartedOn: DATE-TIMESTAMP
+* DevWorkCompletedOn: DATE-TIMESTAMP
+* DeploymentWorkStartedOn: DATE-TIMESTAMP
+* DeploymentWorkCompletedOn: DATE-TIMESTAMP
+* OpsConfirmationStartedOn: DATE-TIMESTAMP
+* OpsConfirmationCompletedOn: DATE-TIMESTAMP
+
+The above would show when the provider was notified, when the dev work occurred, when they deployed the fix and when the operations group verified all the systems were correctly updated for example.
+
+#### Code Specific Actions
+
+* CodeIntroducedOn 
+* CodeFixedOn 
+* CodeRemovedOn
+* ServiceIntroducedOn 
+* ServiceFixedOn 
+* ServiceRemovedOn
+
+#### Example of code specific
+
+* CodeIntroducedOn: DATE-TIMESTAMP
+* CodeFixedOn: DATE-TIMESTAMP
+
+The above would show when the affected code was introduced, fixed and/or removed, as well as for the affected service (e.g. when version 2 and 3 of a service are available, and the old version 2 is deprecated). 
 
 ## description 
 
