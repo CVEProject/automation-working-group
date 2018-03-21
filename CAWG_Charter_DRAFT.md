@@ -1,6 +1,6 @@
-#CVE Security Automation Working Group (SAWG) Charter
+# CVE Security Automation Working Group (SAWG) Charter
 
-##Scope:
+## Scope:
 The CVE Security Automation Working Group is focused on identifying and advancing proposals for the collaborative design, 
 development and deployment of automated capabilities that support the efficient management of the CVE Program. The following 
 goals section includes current high-level goals for the SAWG. The operating principles section captures the principles that 
@@ -11,7 +11,7 @@ focus on a single proposal. Each SAWG project will include a separate charter wh
 principles, and objectives. In general, SAWG projects are initiated through a requirements project. Proposals, and the project(s) 
 that are initiated based on them, should align with the goals, operating principles, and objectives described in this charter.
 
-##Goals:
+## Goals:
 - Realize greater efficiency in CVE processing
 - Implement CVE processing and publishing in near-real time
 - Enable more effective management of CVEs, CNAs, and associated metadata
@@ -21,14 +21,14 @@ that are initiated based on them, should align with the goals, operating princip
 - Achieve greater interoperability of CVE tools, repositories, and technologies
 - Promote seamless integration with other enumerations (e.g. CWE, CAPEC) and internal processes
 
-##Operating Principles:
+## Operating Principles:
 - Employ a decentralized approach to CVE management 
 - Use open source solutions where possible
 - Promote standards and best practices for automated information exchange
 - Develop modular code and pluggable capabilities that can be readily reused or extended
 - Use consistent terminology and naming conventions
 
-##Objectives:
+## Objectives:
 - Document current roles, responsibilities, workflows, data formats, and protocols
 - Define CVE user stories/use cases
 - Design, develop, and deploy automated and enhanced CVE services (ingest, publication, processing)
