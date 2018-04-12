@@ -38,6 +38,13 @@
       "type": "object",
       "required": [ "url" ],
       "properties": {
+        "name": {
+          "maxLength": 500,
+          "type": "string"
+        },
+        "refsource": {
+          "enum": [ "AIXAPAR", "ALLAIRE", "APPLE", "ATSTAKE", "AUSCERT", "BEA", "BID", "BINDVIEW", "BUGTRAQ", "CALDERA", "CERT", "CERT-VN", "CHECKPOINT", "CIAC", "CISCO", "COMPAQ", "CONECTIVA", "CONFIRM", "DEBIAN", "EEYE", "ENGARDE", "ERS", "EXPLOIT-DB", "FarmerVenema", "FEDORA", "FREEBSD", "FRSIRT", "FULLDISC", "GENTOO", "HP", "HPBUG", "IBM", "IDEFENSE", "IMMUNIX", "ISS", "JVN", "JVNDB", "L0PHT", "MANDRAKE", "MANDRIVA", "MISC", "MLIST", "MS", "MSKB", "NAI", "NETBSD", "NTBUGTRAQ", "OPENBSD", "OPENPKG", "OSVDB", "OVAL", "REDHAT", "SCO", "SECTRACK", "SECUNIA", "SF-INCIDENTS", "SGI", "SLACKWARE", "SREASON", "SREASONRES", "SUN", "SUNALERT", "SUNBUG", "SUSE", "TRUSTIX", "TURBO", "UBUNTU", "VIM", "VULN-DEV", "VULNWATCH", "VUPEN", "WIN2KSEC", "XF" ]
+        },
         "url": {
           "maxLength": 500,
           "type": "string",
@@ -50,7 +57,7 @@
       "required": [ "lang", "value" ],
       "properties": {
         "lang": { "type": "string" },
-        "value": { "type": "string", "maxLength": 3999 }
+        "value": { "type": "string", "minLength": 1, "maxLength": 3999 }
       }
     }
   },
