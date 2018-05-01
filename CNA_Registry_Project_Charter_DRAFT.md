@@ -24,8 +24,8 @@ enable automation, and enhance coordination between CNAs.
 ## Proposed Activities:
 - Document workflows
 - Develop user stories that describe the:
- - Capabilities to be provided by the service
- - Resources required and dependencies that exist
- - Assumptions/Constraints
- - Acceptance criteria
+  - Capabilities to be provided by the service
+  - Resources required and dependencies that exist
+  - Assumptions/Constraints
+  - Acceptance criteria
 - Document the business, user, functional, security and performance requirements for the proposed capabilities.
