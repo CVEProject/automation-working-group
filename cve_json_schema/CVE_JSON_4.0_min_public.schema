@@ -39,6 +39,7 @@
       "required": [ "url" ],
       "properties": {
         "name": {
+          "minLength": 1,
           "maxLength": 500,
           "type": "string"
         },
