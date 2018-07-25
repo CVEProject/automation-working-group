@@ -4,6 +4,8 @@
 
 ## Project Lead:  Kurt Seifried kseifried@loudsecurityalliance.org
 
+## Project URL: https://github.com/CVEProject/CVE-User-Registry
+
 ## Overview:
 The CVE User Registry (originally referred to as the CNA registry, but scoping has changed) requirements elicitation project is a collaborative effort to gather, 
 analyze, and document the user stories and requirements for a searchable CVE User (both CNA's, data publishers and additional entities such as projects receiving CVEs) registry. 
