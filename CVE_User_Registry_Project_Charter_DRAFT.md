@@ -2,7 +2,7 @@
 
 ## Project Name:  CVE User Registry Requirements Elicitation
 
-## Project Lead:  Kurt Seifried kseifried@loudsecurityalliance.org
+## Project Lead:  Kurt Seifried kseifried@cloudsecurityalliance.org
 
 ## Project URL: https://github.com/CVEProject/CVE-User-Registry
 
