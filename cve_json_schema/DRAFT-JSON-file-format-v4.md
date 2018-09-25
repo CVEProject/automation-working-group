@@ -790,7 +790,7 @@ The following are a minimal example (as defined by MITRE in the CVE CNA Guidelin
 			{
 				"description":[
 					{
-						"lang": "string ISO 639-2",
+						"lang": "string ISO 639-2 language code",
 						"value":"string description of problem_type"
 					}
 				]
@@ -807,7 +807,7 @@ The following are a minimal example (as defined by MITRE in the CVE CNA Guidelin
 	"description":{
 		"description_data":[
 			{
-				"lang": "string ISO 639-2",
+				"lang": "string ISO 639-2 language code",
 				"value":"string description of vulnerability"
 			}
 		]
