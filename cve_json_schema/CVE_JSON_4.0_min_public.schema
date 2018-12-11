@@ -1,152 +1,110 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-
-  "definitions": {
-    "cve_id": {
-      "type": "string",
-      "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"
-    },
-    "email_address": {
-      "type": "string",
-      "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$"
-    },
-    "product": {
-      "type": "object",
-      "required": [ "product_name", "version" ],
-      "properties": {
-        "product_name": { "type": "string" },
-        "version": {
-          "type": "object",
-          "required": [ "version_data" ],
-          "properties": {
-            "version_data": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "required": [ "version_value" ],
-                "properties": {
-                  "version_value": { "type": "string" }
-                }
-              }
+   "CVE_data_meta": {
+      "ASSIGNER": "psirt@mcafee.com",
+      "ID": "CVE-2018-6703",
+      "STATE": "PUBLIC",
+      "TITLE": "McAfee Agent Incorrect memory and handle management vulnerability"
+   },
+   "affects": {
+      "vendor": {
+         "vendor_data": [
+            {
+               "product": {
+                  "product_data": [
+                     {
+                        "product_name": "McAfee Agent (MA)",
+                        "version": {
+                           "version_data": [
+                              {
+                                 "affected": ">=",
+                                 "platform": "x86",
+                                 "version_name": "5.0.0",
+                                 "version_value": "5.0.0"
+                              },
+                              {
+                                 "affected": "<=",
+                                 "platform": "x86",
+                                 "version_name": "5.0.6",
+                                 "version_value": "5.0.6"
+                              },
+                              {
+                                 "version_name": "5.5.0"
+                              },
+                              {
+                                 "version_name": "5.5.1"
+                              }
+                           ]
+                        }
+                     }
+                  ]
+               },
+               "vendor_name": "McAfee"
             }
-          }
-        }
+         ]
       }
-    },
-    "reference": {
-      "type": "object",
-      "required": [ "url" ],
-      "properties": {
-        "url": {
-          "maxLength": 500,
-          "type": "string",
-          "pattern": "^(ftp|http)s?://\\S+$"
-        }
+   },
+   "credit": [
+      {
+         "lang": "eng",
+         "value": "McAfee credits Frank Cozijnsen of the KPN RED-team for reporting this flaw."
       }
-    },
-    "lang_string": {
-      "type": "object",
-      "required": [ "lang", "value" ],
-      "properties": {
-        "lang": { "type": "string" },
-        "value": { "type": "string", "maxLength": 3999 }
+   ],
+   "data_format": "MITRE",
+   "data_type": "CVE",
+   "data_version": "4.0",
+   "description": {
+      "description_data": [
+         {
+            "lang": "eng",
+            "value": "Use After Free in McAfee Common service in McAfee Agent (MA) 5.0.0 through 5.0.6, 5.5.0, and 5.5.1 allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via a crafted TCP packet."
+         }
+      ]
+   },
+   "impact": {
+      "cvss": {
+         "attackComplexity": "LOW",
+         "attackVector": "ADJACENT_NETWORK",
+         "availabilityImpact": "LOW",
+         "baseScore": 4.3,
+         "baseSeverity": "MEDIUM",
+         "confidentialityImpact": "NONE",
+         "integrityImpact": "NONE",
+         "privilegesRequired": "NONE",
+         "scope": "UNCHANGED",
+         "userInteraction": "NONE",
+         "vectorString": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+         "version": "3.0"
       }
-    }
-  },
-
-  "type": "object",
-  "required": [ "data_type", "data_format", "data_version", "CVE_data_meta", "affects", "problemtype", "references", "description" ],
-  "properties": {
-    "data_type": { "enum": [ "CVE" ] },
-    "data_format": { "enum": [ "MITRE" ] },
-    "data_version": { "enum": [ "4.0" ] },
-    "CVE_data_meta": {
-      "type":"object",
-      "required": [ "ID", "ASSIGNER" ],
-      "properties": { 
-        "ID": { "$ref": "#/definitions/cve_id" },
-        "ASSIGNER": { "$ref": "#/definitions/email_address" }
+   },
+   "problemtype": {
+      "problemtype_data": [
+         {
+            "description": [
+               {
+                  "lang": "eng",
+                  "value": "Use After Free (CWE-416)"
+               }
+            ]
+         }
+      ]
+   },
+   "references": {
+      "reference_data": [
+         {
+            "name": "https://kc.mcafee.com/corporate/index?page=content&id=SB10258",
+            "refsource": "CONFIRM",
+            "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10258"
+         }
+      ]
+   },
+   "source": {
+      "advisory": "SB10258",
+      "discovery": "EXTERNAL"
+   },
+   "work_around": [
+      {
+         "lang": "eng",
+         "value": "McAfee highly recommends that all customers upgrade to McAfee Agent 5.6.0.\n\nIf you cannot upgrade, consider the below configuration change as a temporary workaround.\nDisable the remote logging feature via policy:\nGo to the assigned policy type General for the product McAfee Agent.\nGo to Logging tab.\nDisable Enable remote access to log."
       }
-    },
-    "affects": {
-      "type": "object",
-      "required": [ "vendor" ],
-      "properties": {
-        "vendor": {
-          "type": "object",
-          "required": [ "vendor_data" ],
-          "properties": {
-            "vendor_data": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "required": [ "vendor_name", "product" ],
-                "properties": {
-                  "vendor_name": { "type": "string" },
-                  "product": {
-                    "type": "object",
-                    "required": [ "product_data" ],
-                    "properties": {
-                      "product_data": {
-                        "type": "array",
-                        "minItems": 1,
-                        "items": { "$ref": "#/definitions/product" }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "problemtype": {
-      "type": "object",
-      "required": [ "problemtype_data" ],
-      "properties": {
-        "problemtype_data": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "object",
-            "required": [ "description" ],
-            "properties": {
-              "description": {
-                "type": "array",
-                "minItems": 1,
-                "items": { "$ref": "#/definitions/lang_string" }
-              }
-            }
-          }
-        }
-      }
-    },
-    "references": {
-      "type": "object",
-      "required": [ "reference_data" ],
-      "properties": {
-        "reference_data": {
-          "type": "array",
-          "maxItems": 500,
-          "minItems": 1,
-          "items": { "$ref": "#/definitions/reference" }
-        }
-      }
-    },
-    "description": {
-      "type": "object",
-      "required": [ "description_data" ],
-      "properties": {
-        "description_data": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "$ref": "#/definitions/lang_string" }
-        }
-      }
-    }
-  }
+   ]
 }
-
