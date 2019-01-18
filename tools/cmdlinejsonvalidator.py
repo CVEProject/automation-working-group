@@ -42,7 +42,7 @@ def jsonvalidation(json_doc_path, json_schema_path):
         except ValueError as err:
             sys.stderr.write("Failed to parse JSON : \n")
             sys.stderr.write("  " + str(err) + "\n")
-            raise SystemExit
+            raise SystemExit(1)
 
     try:
         validate(json_doc, schema_doc)
@@ -53,7 +53,7 @@ def jsonvalidation(json_doc_path, json_schema_path):
         for error in errors:
             sys.stderr.write("Record did not pass: \n")
             sys.stderr.write(str(error.message) + "\n")
-
+        raise SystemExit(2)
 
 def main():
     import argparse
