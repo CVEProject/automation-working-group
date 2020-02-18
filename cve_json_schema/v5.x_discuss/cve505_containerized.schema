@@ -12,7 +12,7 @@
             ],
             "properties": {
                 "url": {
-                    "maxLength": 500,
+                    "maxLength": 2000,
                     "type": "string",
                     "pattern": "^(ftp|http)s?://\\S+$"
                 }
