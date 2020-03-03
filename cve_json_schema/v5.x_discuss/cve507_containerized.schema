@@ -115,6 +115,21 @@
                                     "?<=",
                                     "?>="
                                 ]
+                            },
+                            "version_type": {
+                                "type": "string",
+                                "description": "An optional specifier that indicates additional version data is provided.",
+                                "enum": [
+                                    "semver"
+                                ]
+                            },
+                            "vulnerable_version_range": {
+                                "type": "string",
+                                "description": "A SemVer version range (following the npm SemVer range standard: https://docs.npmjs.com/misc/semver) of versions that contain this vulnerability."
+                            },
+                            "first_fixed_version": {
+                                "type": "string",
+                                "description": "A SemVer string (following the SemVer spec: https://semver.org/) that represents the first fixed version."
                             }
                         }
                     }
