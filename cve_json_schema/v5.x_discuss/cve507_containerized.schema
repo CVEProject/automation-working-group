@@ -49,6 +49,37 @@
                     "type": "string",
                     "description": "Name of the affected product."
                 },
+                "package_name": {
+                    "type": "string",
+                    "description": "Name of the affected software package, if it exists."
+                },
+                "package_ecosystem": {
+                    "type": "string",
+                    "description": "If a package_name is provided, the ecosystem from which the package originates.",
+                    "enum": [
+                        "brew",
+                        "cabal",
+                        "chocolatey",
+                        "cocoapods",
+                        "composer",
+                        "conan",
+                        "conda",
+                        "cpan",
+                        "cran",
+                        "ctan",
+                        "deb",
+                        "docker",
+                        "golang",
+                        "ivy",
+                        "maven",
+                        "npm",
+                        "nuget",
+                        "pip",
+                        "rpm",
+                        "rubygem",
+                        "vcpkg"
+                    ]
+                },
                 "version": {
                     "type": "array",
                     "description": "",
