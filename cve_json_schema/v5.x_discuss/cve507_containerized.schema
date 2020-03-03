@@ -59,6 +59,7 @@
                     "enum": [
                         "brew",
                         "cabal",
+                        "cargo",
                         "chocolatey",
                         "cocoapods",
                         "composer",
@@ -70,11 +71,12 @@
                         "deb",
                         "docker",
                         "golang",
+                        "hex",
                         "ivy",
                         "maven",
                         "npm",
                         "nuget",
-                        "pip",
+                        "pypi",
                         "rpm",
                         "rubygem",
                         "vcpkg"
