@@ -78,7 +78,7 @@
                         "nuget",
                         "pypi",
                         "rpm",
-                        "rubygem",
+                        "rubygems",
                         "vcpkg"
                     ]
                 },
