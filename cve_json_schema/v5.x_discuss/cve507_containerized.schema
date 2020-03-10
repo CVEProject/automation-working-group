@@ -81,6 +81,10 @@
                         "rubygems",
                         "vcpkg"
                     ]
+                },                
+                "repository": {
+                    "type": "string",
+                    "description": "The source repository of the product, if it is open source."
                 },
                 "version": {
                     "type": "array",
@@ -117,6 +121,10 @@
                                     "?<=",
                                     "?>="
                                 ]
+                            },
+                            "version_commit": {
+                                "type": "string",
+                                "description": "A reference to the commit (e.g. a Git commit hash or tag) in the `repository` that corresponds to this version"
                             }
                         }
                     }
