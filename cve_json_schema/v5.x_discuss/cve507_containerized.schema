@@ -40,10 +40,30 @@
         "product": {
             "type": "object",
             "description": "",
-            "required": [
-                "product_name",
-                "version"
+            "anyOf": [
+                {
+                    "required": [
+                        "product_name",
+                        "version"
+                    ]
+                },
+                {
+                    "required": [
+                        "product_name",
+                        "version",
+                        "package_name"
+                    ]
+                },
+                {
+                    "required": [
+                        "product_name",
+                        "version",
+                        "package_name",
+                        "package_ecosystem"
+                    ]
+                }
             ],
+            "required": [],
             "properties": {
                 "product_name": {
                     "type": "string",
