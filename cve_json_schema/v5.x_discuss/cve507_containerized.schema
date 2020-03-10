@@ -122,9 +122,9 @@
                                     "?>="
                                 ]
                             },
-                            "version_commit": {
+                            "version_revision": {
                                 "type": "string",
-                                "description": "A reference to the commit (e.g. a Git commit hash or tag) in the `repository` that corresponds to this version"
+                                "description": "A reference to the revision (e.g. a Git commit hash or tag) in the `repository` that corresponds to this version"
                             }
                         }
                     }
