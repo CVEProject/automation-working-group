@@ -40,77 +40,14 @@
         "product": {
             "type": "object",
             "description": "",
-            "anyOf": [
-                {
-                    "required": [
-                        "product_name",
-                        "version"
-                    ]
-                },
-                {
-                    "required": [
-                        "product_name",
-                        "version",
-                        "package_name"
-                    ]
-                },
-                {
-                    "required": [
-                        "product_name",
-                        "version",
-                        "package_name",
-                        "package_ecosystem"
-                    ]
-                }
+            "required": [
+                "product_name",
+                "version"
             ],
-            "required": [],
             "properties": {
                 "product_name": {
                     "type": "string",
                     "description": "Name of the affected product."
-                },
-                "package_name": {
-                    "type": "string",
-                    "description": "Name of the affected software package, if it exists."
-                },
-                "package_ecosystem": {
-                    "type": "string",
-                    "description": "If a package_name is provided, the ecosystem from which the package originates.",
-                    "enum": [
-                        "brew",
-                        "cabal",
-                        "cargo",
-                        "ccan",
-                        "chocolatey",
-                        "clojars",
-                        "cocoapods",
-                        "composer",
-                        "conan",
-                        "conda",
-                        "cpan",
-                        "cran",
-                        "ctan",
-                        "deb",
-                        "docker",
-                        "elm",
-                        "gem",
-                        "gitsubmodule",
-                        "gomod",
-                        "hex",
-                        "ivy",
-                        "maven",
-                        "npm",
-                        "nuget",
-                        "pypi",
-                        "rpm",
-                        "swift",
-                        "terraform",
-                        "vcpkg"
-                    ]
-                },                
-                "repository": {
-                    "type": "string",
-                    "description": "The source repository of the product, if it is open source."
                 },
                 "version": {
                     "type": "array",
@@ -147,10 +84,6 @@
                                     "?<=",
                                     "?>="
                                 ]
-                            },
-                            "version_revision": {
-                                "type": "string",
-                                "description": "A reference to the revision (e.g. a Git commit hash or tag) in the `repository` that corresponds to this version"
                             }
                         }
                     }
