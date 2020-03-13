@@ -27,7 +27,34 @@
                     "maxLength": 500,
                     "minLength": 1,
                     "description": "name of the source, program, etc that produced the URL."
-                }
+                },
+                "tags": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 40,
+                        "examples": [
+                            "Broken Link",
+                            "Exploit",
+                            "Issue Tracking",
+                            "Mailing List",
+                            "Mitigation",
+                            "Not Applicable",
+                            "Patch",
+                            "Permissions Required",
+                            "Press/Media Coverage",
+                            "Product",
+                            "Release Notes",
+                            "Technical Description",
+                            "Third Party Advisory",
+                            "Tool Signature",
+                            "VDB Entry",
+                            "Vendor Advisory"
+                        ]
+                    }
+                }                
             }
         },
         "cve_id": {
@@ -457,6 +484,7 @@
                 "type": "object",
                 "description": "",
                 "minItems": 1,
+                "uniqueItems": true,
                 "properties": {
                     "lang": {
                         "type": "string",
@@ -466,7 +494,7 @@
                     },
                     "value": {
                         "type": "string",
-                        "description": "string description of problem_type, or title from CWE, OWASP",
+                        "description": "Description of the vulnerability. Eg., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].",
                         "minLength": 1
                     }
                 }
@@ -505,7 +533,8 @@
                                 "CWE-ID": {
                                     "type": "string",
                                     "description": "CWE ID of the CWE that best describes this problem_type entry",
-                                    "minLength": 1
+                                    "minLength": 5,
+                                    "pattern":"^CWE-[0-9]+$" 
                                 },
                                 "type": {
                                     "type": "string",
@@ -630,31 +659,101 @@
                 }
             }
         },
-        "configuration": {
-            "type": "object",
-            "description": "This is configuration information (format to be decided, we may for example support XCCDF or simple text based descriptions). It is generally meant to contain additional containers (e.g. CVE_description, CVE_impact). Must contain: At least one configuration",
-            "minProperties": 1
-
+        "configurations": {
+            "type": "array",
+            "description": "This is configuration information. It is generally meant to contain additional containers (e.g. CVE_description, CVE_impact). Must contain: At least one configuration",
+            "items": {
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "description": "ISO 639-2 language code",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "description": "Configurations required for exploiting this vulnerability.",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
         },
-        "workaround": {
-            "type": "object",
-            "description": "This is workaround information, format to be decided. Must contain: At least one workaround",
-            "minProperties": 1
+        "workarounds": {
+            "type": "array",
+            "description": "Workarounds and mitigations for this vulnerability.",
+            "items": {
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "description": "ISO 639-2 language code",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
         },
-        "exploit": {
-            "type": "object",
-            "description": "This is exploit information, format to be decided. Must contain: At least one exploit / information about exploitation",
-            "minProperties": 1
+        "exploits": {
+            "type": "array",
+            "description": "Information about exploits of the vulnerability",
+            "items": {
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "description": "ISO 639-2 language code",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
         },
         "timeline": {
-            "type": "object",
-            "description": "This is timeline information (different than CVE_credit in that it may be historical events for which nobody can be directly credited), format to be decided. Must contain: At least one timeline entry",
-            "minProperties": 1
+            "type": "array",
+            "description": "This is timeline information for significant events about this vulnerability or changes to CVE entry",
+            "items": {
+                "type": "object",
+                "required": [
+                    "time",
+                    "lang",
+                    "value",
+                ],
+                "properties": {
+                    "time": {
+                        "$ref": "#/definitions/timestamp"
+                    },
+                    "lang": {
+                        "type": "string",
+                        "description": "ISO 639-2 language code",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "description": "Description of event",
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
         },
-        "credit": {
-            "type": "object",
-            "description": "This is credit information (different than CVE_timeline in that these are specific things being credited to specific people/organizations/etc.), format to be decided. Must contain: At least one credit entry",
-            "minProperties": 1
+        "credits": {
+            "type": "array",
+            "description": "Statements acknowledging specific people/organizations/etc.,",
+            "items": {
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "description": "ISO 639-2 language code",
+                        "minLength": 1
+                    },
+                    "value": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            }
         },
         "source": {
             "type": "object",
