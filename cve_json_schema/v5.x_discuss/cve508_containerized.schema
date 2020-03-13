@@ -127,6 +127,10 @@
                         "other"
                     ]
                 },
+                "repository": {
+                    "type": "string",
+                    "description": "The source repository of the product, if it is open source."
+                },
                 "versions": {
                     "type": "array",
                     "description": "",
@@ -163,6 +167,10 @@
                                     "?<=",
                                     "?>="
                                 ]
+                            },
+                            "version_revision": {
+                                "type": "string",
+                                "description": "A reference to the revision (e.g. a Git commit hash or tag) in the `repository` that corresponds to this version"
                             },
                             "references": {"$ref": "#/definitions/references"}
                         }
