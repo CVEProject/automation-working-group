@@ -40,3 +40,8 @@ operating principles, and objectives described in this charter.
 1. Design, develop, and deploy automated and enhanced CVE services (ingest, publication, processing)
 1. Design, develop, and deploy software tools for the development and management of CVE content/information
 1. Streamline existing processes and lay a foundation for future processes
+
+## Membership in the AWG is open to:
+1. Certified Number Authorities
+1. Authorized Data Publishers
+1. Members of the other CVE Working Groups
