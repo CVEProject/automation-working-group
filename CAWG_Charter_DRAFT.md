@@ -42,6 +42,6 @@ operating principles, and objectives described in this charter.
 1. Streamline existing processes and lay a foundation for future processes
 
 ## Membership in the AWG is open to:
-1. Certified Number Authorities
+1. CVE Numbering Authorities
 1. Authorized Data Publishers
 1. Members of the other CVE Working Groups
