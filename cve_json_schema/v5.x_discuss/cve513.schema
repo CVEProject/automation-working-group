@@ -425,7 +425,12 @@
             "descriptions",
             "affected",
             "references"
-         ]
+         ],
+         "additionalProperties": {
+            "patternProperties": {
+                "^x_" : {}
+            }
+         }
       },
       "adp-container": {
          "type": "object",
@@ -473,7 +478,12 @@
          "required": [
             "provider_data_meta"
          ],
-         "minProperties": 2
+         "minProperties": 2,
+         "additionalProperties": {
+            "patternProperties": {
+                "^x_" : {}
+            }
+         }
       },
       "containers": {
          "type": "object",
@@ -592,6 +602,35 @@
                   "type": "string",
                   "description": "Description of the vulnerability. Eg., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].",
                   "minLength": 1
+               },
+               "supportingMedia": {
+                   "type": "array",
+                   "title": "Supporting media",
+                   "description": "Supporting media data for the description such as markdown, diagrams, .. (optional)",
+                   "uniqItems": true,
+                   "items": {
+                       "type": "object",
+                       "properties": {
+                           "type": {
+                               "type": "string",
+                               "title": "Media type",
+                               "description": "RFC2046 compliant IANA Media type for eg., text/markdown, text/html.",
+                               "examples": ["text/markdown", "text/html", "image/png", "image/svg", "audio/mp3"]
+                           },
+                           "encoding": {
+                               "type": "string",
+                               "title": "Encoding",
+                               "description": "Encoding used for this media eg., base64 (optional)",
+                               "examples": ["base64", "utf8"]
+                           },
+                           "value": {
+                               "type": "string",
+                               "description": "Supporting media value",
+                               "minLength": 1
+                           }
+                       }
+                   },
+                   "required": ["type", "value"]
                }
             },
             "required": [
