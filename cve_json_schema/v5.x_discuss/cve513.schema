@@ -600,7 +600,7 @@
                },
                "value": {
                   "type": "string",
-                  "description": "Description of the vulnerability. Eg., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].",
+                  "description": "Plain text description of the vulnerability. Eg., [PROBLEMTYPE] in [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] allows [ATTACKER] to [IMPACT] via [VECTOR]. OR [COMPONENT] in [VENDOR] [PRODUCT] [VERSION] [ROOT CAUSE], which allows [ATTACKER] to [IMPACT] via [VECTOR].",
                   "minLength": 1
                },
                "supportingMedia": {
