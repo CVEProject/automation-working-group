@@ -28,7 +28,7 @@ There is no cap on the number of members an organization may have on the AWG, th
 
 Members of the AWG must agree to abide by the professional conduct guidance as required by the CVE Board in the [CVE Program Professional Code of Conduct](https://www.cve.mitre.org/about/professional_code_of_conduct.html).
 
-As described in the code, any program participant may report a concern or complaint.  Such complaints should be reported to the CVE Program Secretariat via the Secretariate email, cve-prog-secretariat@mitre.org.
+As described in the code, any program participant may report a concern or complaint.  Such complaints should be reported to the CVE Program Secretariat via the Secretariat email, cve-prog-secretariat@mitre.org.
 
 
 # Removing AWG Members
