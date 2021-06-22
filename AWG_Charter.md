@@ -26,29 +26,9 @@ There is no cap on the number of members an organization may have on the AWG, th
 
 # Professional Code of Conduct Guidance
 
-Members of the AWG must agree to abide by the professional conduct guidance as described below. Complaints regarding inappropriate behavior are welcomed by AWG Chair(s) or another member of the[CVE Board](https://cve.mitre.org/community/board/index.html#current_members).
+Members of the AWG must agree to abide by the professional conduct guidance as required by the CVE Board in the [CVE Program Professional Code of Conduct](https: www.cve.mitre.org/about/professional_code_of_conduct.html).
 
-In the interest of fostering an open and welcoming environment, AWG members agree to make participation in the AWG and directly related activities, a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
-
-The Chair(s) of the AWG and the CVE Board are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.­­­
-
-Examples of unacceptable behavior by participants include:
-
-- Public or private harassment.
-- The use of sexualized language or imagery and unwelcome sexual attention or advances.
-- Trolling, insulting/derogatory comments, and personal or political attacks.
-- Publishing others&#39; private information, such as a physical or electronic address, without explicit permission. Other conduct which could reasonably be considered inappropriate in a professional setting.
-
-Complaints should be sent to the AWG Chair(s). All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The Chair(s) is obligated to maintain confidentiality with regard to the reporter of an incident
-
-If action is necessary due to a verified complaint:
-
-1. The CVE Program requires any response should be as transparent as possible, without exposing the person subjected to the unprofessional conduct.
-2. The Secretariat, speaking on behalf of the CVE Program and the AWG, will send a public message to the AWG mailing list calling out the unacceptable behavior. It will explain that such repeated behavior will result in removal from the list. In cases where the unprofessional conduct warrants no second chance, a removal action will be performed in accordance with Section 5.
-3. The Secretariat, speaking on behalf of the Board, will send a direct warning to the AWG member. That warning will explain to the individual that disciplinary actions will be taken, and will outline the consequences of failing to correct the inappropriate behavior. The violating member will not be removed at this time.
-4. If the unacceptable behavior is corrected, the Secretariat should send a message back to the initial submitter explaining the actions taken, and at this point the issue is closed.
-
-If the violating member in question has repeated complaints against them then the situation needs to be discussed with the Chair(s) and the Secretariat as to the steps that need to be taken next. If it becomes necessary for drastic action to be taken, such as removal of the offender, the Chair(s) and the Secretariat will follow the AWG member forced removal process specified in the Removing AWG Members section.
+As described in the code, any program participant may report a concern or complaint.  Such complaints should be reported to the CVE Program Secretariat via the Secretariate email, cve-prog-secretariat@mitre.org.
 
 
 # Removing AWG Members
