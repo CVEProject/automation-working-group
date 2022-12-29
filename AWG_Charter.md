@@ -48,7 +48,7 @@ Once consensus has been called by the Chair(s), the recommendations of the AWG w
 
 While most times consensus can be accurately determined on a working group call, there may be cases were consensus is not achieved. In such cases, different points of view will be documented as described above and the CVE Board will make the final determination, by vote if necessary.
 
-## Concesus and the Tacit Acceptance Procedure
+## Concensus and the Tacit Acceptance Procedure
 
 In the context of pursuing consensus, from time to time, the AWG will be required to
 review information and provide comment. This may happen during the course of a
