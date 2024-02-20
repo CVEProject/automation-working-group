@@ -1,0 +1,32 @@
+name: Meeting Notes
+
+on:
+  # Run every Wednesday at midnight UTC.
+  schedule:
+    - cron: '0 0 * * WED'
+  # Allow job to be triggered manually
+  workflow_dispatch:
+
+jobs:
+  create-notes:
+    # Allow job to commit to Git repo
+    permissions:
+      contents: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE, so the job can access it
+      - uses: actions/checkout@v3
+
+      - name: Create meeting notes document
+        run: |
+          git config --local user.name "AWG[bot]"
+          git config --local user.email "AWG[bot]@users.noreply.github.com"
+          next_meeting=$(date -d "next tue" +%F)
+          cp --no-clobber _template.md "$next_meeting".md
+          if [ -z "$(git status --porcelain)" ]; then echo "No changes to commit"; exit 0; fi
+          sed "s/# DATE/# $(date -d "next tue" +"%B %d, %Y")/g" -i "$next_meeting.md"
+          git add .
+          git commit -m "New meeting notes file"
+          git push origin master
