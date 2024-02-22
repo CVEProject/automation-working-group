@@ -24,7 +24,7 @@ jobs:
           git config --local user.name "AWG[bot]"
           git config --local user.email "AWG[bot]@users.noreply.github.com"
           next_meeting=$(date -d "next tue" +%F)
-          cp --no-clobber _template.md "$next_meeting".md
+          cp --no-clobber meeting-notes/_template.md "$next_meeting".md
           if [ -z "$(git status --porcelain)" ]; then echo "No changes to commit"; exit 0; fi
           sed "s/# DATE/# $(date -d "next tue" +"%B %d, %Y")/g" -i "$next_meeting.md"
           git add .
