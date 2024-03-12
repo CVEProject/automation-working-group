@@ -26,7 +26,7 @@ jobs:
           next_meeting=$(date -d "next tue" +%F)
           cp --no-clobber meeting-notes/_template.md meeting-notes/"$next_meeting".md
           if [ -z "$(git status --porcelain)" ]; then echo "No changes to commit"; exit 0; fi
-          sed "s/# DATE/# $(date -d "next tue" +"%B %d, %Y")/g" -i "$next_meeting.md"
+          sed "s/# DATE/# $(date -d "next tue" +"%B %d, %Y")/g" -i meeting-notes/"$next_meeting.md"
           git add .
           git commit -m "New meeting notes file"
           git push origin master
