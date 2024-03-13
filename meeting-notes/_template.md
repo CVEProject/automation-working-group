@@ -18,4 +18,4 @@
 
 ## Recording
 
-TBA
+Meeting Recordings are available at on the AWG Groups.io platform. To become a member of the AWG (and gain access this platform), send email to AWG@CVE-CWE-Programs.groups.io with a request.
