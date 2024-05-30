@@ -50,22 +50,11 @@ While most times consensus can be accurately determined on a working group call,
 
 ## Concensus and the Tacit Acceptance Procedure
 
-In the context of pursuing consensus, from time to time, the AWG will be required to
-review information and provide comment. This may happen during the course of a
-meeting, or it may happen between meetings as decisions are pursued in the absence of
-a “face to face”, real time discourse.
+In the context of pursuing consensus, from time to time, the AWG will be required to review information and provide comment. This may happen during the course of a meeting, or it may happen between meetings as decisions are pursued in the absence of a “face to face”, real time discourse.
 
-When such reviews are required, the AWG may use a Tacit Acceptance (or silence)
-procedure. A member of the community (to include the AWG Chair) will provide
-information (or a position) to be reviewed along with a “review period”. As part of the
-review request, the requestor will explicitly note that the Silence Procedure is being
-used.
+When such reviews are required, the AWG may use a Tacit Acceptance (or silence) procedure. A member of the community (to include the AWG Chair) will provide information (or a position) to be reviewed along with a “review period”. As part of the review request, the requestor will explicitly note that the Silence Procedure is being used.
 
-When this procedure is invoked, if by the end of the review period there are no
-comments received from the community, consensus on the proposal is reached and the
-position is adopted by the AWG. Should comments be received, they will be discussed
-(either in person or via email) and be resolved according to “Consensus Determination”
-described above.
+When this procedure is invoked, if by the end of the review period there are no comments received from the community, consensus on the proposal is reached and the position is adopted by the AWG. Should comments be received, they will be discussed (either in person or via email) and be resolved according to “Consensus Determination” described above.
 
 ## Working Group Meetings
 
