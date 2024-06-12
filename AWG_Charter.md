@@ -2,7 +2,7 @@
 
 ## **Automation Working Group Charter**
 
-DRAFT --- Version 2.1 -------
+DRAFT --- Version 2.1 ------- DRAFT
 
 (This version of the CVE AWG Charter is being considered for adoption at the June 25, 2024 AWG meeting).  
 
