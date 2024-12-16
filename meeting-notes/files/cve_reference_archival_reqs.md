@@ -28,9 +28,33 @@
   - AWG (Dec 3,2024): user story: I have a CVE ID, show me all of its archived references.
   - AWG (Dec 3,2024): no need for generic search of all references
 
+**Architectural Approaches**
+
+- Ready-made solutions:
+  - [Archivebox](https://archivebox.io/)
+    - Self-hosted solution with a myriad of capture formats and storage options
+
+- Home-grown solutions:
+  - CI + git + wget
+  - Cron jobs + object storage + metadata DB + scraper
+    - Purpose-built scrapers:
+      - https://github.com/Rhizome-Conifer/conifer
+      - https://github.com/internetarchive/brozzler
+      - https://webcuratortool.readthedocs.io/en/latest/guides/user-manual.html
+      - https://github.com/gildas-lormeau/SingleFile
+      - custom Python stack: playwrigth + warcio (or similar)
+
+ - Paid solutions:
+  - https://perma.cc/
+    - no public pricing available (found $0.25 per link)
+  - https://www.pagefreezer.com/
+    - no public pricing available, focused on compliance with recordkeeping requirements (might be pricey??)
+  - https://urlbox.com/pricing
+    - takes screenshots of pages
+
 **Questions**
 
-_Dec 3,2024_:
+_Dec 3, 2024_:
 - Do we replace dead links with their archived versions?
   - AWG: leave the original link and indicate that it may be invalid and provide a way to resolve it to its archived version
 - Should a CVE record instead be improved to contain enough information to not heavily depend on references?
@@ -42,10 +66,8 @@ _Dec 3,2024_:
   - AWG: bulk download of all archived content could be added in a later version, not in MVP
   - AWG: estimated based on local experiments 3TB of archived data for the entired CVE data set
 
-**Architectural Approaches**
-
-- archivebox vs <something_else>
-  - ask Tod to demo archivebox
+_Dec 17, 2024_:
+- (discuss potential solution)
 
 **Proposed solution**
 
