@@ -45,12 +45,12 @@
       - custom Python stack: playwrigth + warcio (or similar)
 
  - Paid solutions:
-  - https://perma.cc/
-    - no public pricing available (found $0.25 per link)
-  - https://www.pagefreezer.com/
-    - no public pricing available, focused on compliance with recordkeeping requirements (might be pricey??)
-  - https://urlbox.com/pricing
-    - takes screenshots of pages
+   - https://perma.cc/
+     - no public pricing available (found $0.25 per link)
+   - https://www.pagefreezer.com/
+     - no public pricing available, focused on compliance with recordkeeping requirements (might be pricey??)
+   - https://urlbox.com/pricing
+     - takes screenshots of pages
 
 **Questions**
 
