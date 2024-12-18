@@ -33,16 +33,34 @@
 - Ready-made solutions:
   - [Archivebox](https://archivebox.io/)
     - Self-hosted solution with a myriad of capture formats and storage options
+    - Some notes on running ArchiveBox from Tod: https://github.com/todb/junkdrawer/tree/main/cve-kev-refs
+    - The service itself does not have to be explosed to the Internet, we only want its scraping and archiving capabilities; retrieval could be direct from storage (e.g. S3 bucket or web server front-end)
+    - cost: storage + maintenance/dev effort
+      - deploy archivebox: VM (EC2) + S3 + auth + logging
+      - required CVE Services dev work: notify archiving service/job to create a snapshot on CVE publish
+      - long-term maintenance
+
+- Third-party solutions:
+  - Relying on archive.org
+    - rumor: as part CVE data ingestion, Qualys already submits every CVE reference to archive.org
+  - Library of Congress
+    - how can we contact the Web Archive team?
 
 - Home-grown solutions:
-  - CI + git + wget
-  - Cron jobs + object storage + metadata DB + scraper
-    - Purpose-built scrapers:
-      - https://github.com/Rhizome-Conifer/conifer
-      - https://github.com/internetarchive/brozzler
-      - https://webcuratortool.readthedocs.io/en/latest/guides/user-manual.html
-      - https://github.com/gildas-lormeau/SingleFile
-      - custom Python stack: playwrigth + warcio (or similar)
+  - Simple: CI + git + wget
+  - More advanced: Cron jobs + object storage + metadata DB + scraper
+  - Purpose-built scrapers:
+    - https://github.com/Rhizome-Conifer/conifer
+    - https://github.com/internetarchive/brozzler
+    - https://webcuratortool.readthedocs.io/en/latest/guides/user-manual.html
+    - https://github.com/gildas-lormeau/SingleFile
+    - custom Python stack: playwrigth + warcio (or similar)
+  - home-grown solutions quickly hit limits that may be solved in ArchiveBox; page timeouts, retries, inaccessible pages, etc.
+  - cost:
+    - initial dev work + deployment
+      - architecture could be similar to cvelist bulk download repo
+    - CVE Services dev work (same as archivebox)
+    - long-term maintenance plus improvements
 
  - Paid solutions:
    - https://perma.cc/
@@ -52,7 +70,7 @@
    - https://urlbox.com/pricing
      - takes screenshots of pages
 
-**Questions**
+**Questions & Discussion**
 
 _Dec 3, 2024_:
 - Do we replace dead links with their archived versions?
@@ -67,7 +85,11 @@ _Dec 3, 2024_:
   - AWG: estimated based on local experiments 3TB of archived data for the entired CVE data set
 
 _Dec 17, 2024_:
-- (discuss potential solution)
+- 593,848 unique references as of 2024-12-06
+- Paid solutions seem to expensive and there would like not be budget for them
+- Relying on archive.org is not an optimal solution because it could be shut down at any time and we'd lose the entire data set
+- Library of Congress is difficult to contact and would most likely take a while to take this on
+- We need to create a cost estimate for deploy+maintain of ArchiveBox, and create+deploy+maintain of a simple CI-driven solution
 
 **Proposed solution**
 
