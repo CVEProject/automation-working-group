@@ -34,7 +34,7 @@
   - [Archivebox](https://archivebox.io/)
     - Self-hosted solution with a myriad of capture formats and storage options
     - Some notes on running ArchiveBox from Tod: https://github.com/todb/junkdrawer/tree/main/cve-kev-refs
-    - The service itself does not have to be explosed to the Internet, we only want its scraping and archiving capabilities; retrieval could be direct from storage (e.g. S3 bucket or web server front-end)
+    - The service itself does not have to be exposed to the Internet, we only want its scraping and archiving capabilities; retrieval could be direct from storage (e.g. S3 bucket or web server front-end)
     - cost: storage + maintenance/dev effort
       - deploy archivebox: VM (EC2) + S3 + auth + logging
       - required CVE Services dev work: notify archiving service/job to create a snapshot on CVE publish
