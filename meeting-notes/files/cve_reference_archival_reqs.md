@@ -70,6 +70,33 @@
    - https://urlbox.com/pricing
      - takes screenshots of pages
 
+**Cost & Resource Analysis**
+
+- ArchiveBox:
+  - Self-managed:
+    - Storage costs (S3):
+      - average webpage archive (HTML, screenshots, resources): ~10MB
+      - 500k sites * 10MB = ~5TB storage (this feels really large...)
+      - ~$115/month for 5TB
+    - Compute costs ECS:
+      - 1 vCPU, 2GB RAM
+      - ~$35/month
+    - Serving content from S3 CloudFront:
+      - 1M requests / 1TB transfer
+      - ~$88/month
+    - Rough total: $238/month
+  - Hosted solutions:
+    - Complete list at https://github.com/ArchiveBox/ArchiveBox?tab=readme-ov-file#-other-options
+    - Fully-managed: https://elest.io/open-source/archivebox
+      - XL: $164/month (may need more storage)
+    - AWS marketplace: https://aws.amazon.com/marketplace/pp/prodview-hwqaitd4t3vzy
+      - t3.large compute: $163/month
+      - storage 500GB: $50/month
+      - most likely need to include CloudFront cost to serve content
+
+- Github-based solution:
+  - TBA
+
 **Questions & Discussion**
 
 _Dec 3, 2024_:
