@@ -95,7 +95,10 @@
       - most likely need to include CloudFront cost to serve content
 
 - Github-based solution:
-  - TBA
+  - A hybrid GitHub-based solution that relies on NPM libraries to scrape web content instead of ArchiveBox and
+    store the content in external storage (likely S3 bucket) would require less cost (only paying for storage and
+    serving of the content), but requires more development time up front.
+  - Details in slides: TBA
 
 **Questions & Discussion**
 
@@ -118,6 +121,16 @@ _Dec 17, 2024_:
 - Library of Congress is difficult to contact and would most likely take a while to take this on
 - We need to create a cost estimate for deploy+maintain of ArchiveBox, and create+deploy+maintain of a simple CI-driven solution
 
-**Proposed solution**
+**AWG-recommended Solution**
 
-- (answer questions above before coming up with solutions)
+Through discussion of the various requirements, it was determined that both managed (paid), self-hosted solutions
+(on AWS infrastructure), and self-developed options are viable solutions to the archival of CVE references. The cost
+of either solution is within reason, and it is thus up to the assigned developer(s) to decide which approach is most
+flexible and effective to achieve the result.
+
+The AWG recommends the allocation of developer resources to further refine the proposed implementation, and create
+an MVP that:
+- Is able to archive the content provided by a given reference included in a CVE record
+- Saves the scraped content in one human-readable format (png, pdf) and one machine-readable format (html/jss/css, warc)
+- Gives a user the ability to easily retrieve an archived reference
+- Generates an archived version of a reference at four intervals: 0, 3, 10, 90 days
