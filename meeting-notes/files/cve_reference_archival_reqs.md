@@ -96,9 +96,9 @@
 
 - Github-based solution:
   - A hybrid GitHub-based solution that relies on NPM libraries to scrape web content instead of ArchiveBox and
-    store the content in external storage (likely S3 bucket) would require less cost (only paying for storage and
+    store the content in either a GitHub repository (looking at repository size limitations) or external storage (likely S3 bucket) would require less cost (possibly no cost or only paying for storage and
     serving of the content), but requires more development time up front.
-  - Details in slides: TBA
+  - Details in [PowerPoint slides](https://github.com/CVEProject/automation-working-group/blob/master/meeting-notes/files/2025-01-14%20CVE%20Reference%20Archiver%20Proposal.pptx) (requires download of slides)
 
 **Questions & Discussion**
 
