@@ -11,6 +11,8 @@ There are a variety of reasons that DNS, web access, and archive attempts can fa
 5. Domain and site are active but old advisory URLs redirect to a landing page (boo, may be detectable)
 6. Reference passes DNS and "web" checks but site detects and blocks ArchiveBox (robots.txt, user-agent, etc.)
 
+Here is an [image](archiver_pilot_process.png) of the Mermaid chart.
+
 ```mermaid
 ---
 title: CVE Reference Archiver
