@@ -134,3 +134,13 @@ an MVP that:
 - Saves the scraped content in one human-readable format (png, pdf) and one machine-readable format (html/jss/css, warc)
 - Gives a user the ability to easily retrieve an archived reference
 - Generates an archived version of a reference at four intervals: 0, 3, 10, 90 days
+
+**August/2025 CVE Program Reference Archive Capability Objective Statement**
+
+The CVE Program requires the ability to ensure that references that are cited within CVE Records over a defined period of time are preserved and accessible in perpetuity.    The solution    must  provide the public with basic, reliable access to references included in CVE Records to support transparency, cybersecurity research, and public awareness. The system will prioritize simplicity, scalability, and low maintenance overhead, leveraging minimal infrastructure to deliver a streamlined and cost-effective solution for accessing archived CVE Record references.
+
+Proposed Requirement Refinement for Pilot:
+- Retrieval Interface: A publicly available GUI and API that takes as input a single CVE ID and an interval (0, 3, 10, 90 days) and returns the compressed content of the references that are available for that CVE ID at that interval.
+
+  
+
