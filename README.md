@@ -6,7 +6,7 @@ Prior to February/2024 meeting notes were recorded on the AWG email list which i
 
 ## Joining the AWG
 
-The AWG meets virtually (i.e., Microsoft Team meeting) every Tuesday, 4:00 PM Eastern Time. If you are interested in joining the AWG you can send an email request to AWG@CVE-CWE-Programs.groups.io or you can submit a request to the CVE Program Secretariat using [this](https://cveform.mitre.org/) web form (choose "other" for Request Type and "other" for "Type of Comment" and request to join the AWG in the "Comment Section").
+The AWG holds virtual meetings (Microsoft Teams) every Tuesday at two alternating times: 4:00 PM ET one week, then 9:00 AM ET the following week. If you are interested in joining the AWG you can send an email request to AWG@CVE-CWE-Programs.groups.io or you can submit a request to the CVE Program Secretariat using [this](https://cveform.mitre.org/) web form (choose "other" for Request Type and "other" for "Type of Comment" and request to join the AWG in the "Comment Section").
 
 ## CVE Schema Content Changes
 
