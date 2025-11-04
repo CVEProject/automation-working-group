@@ -87,3 +87,8 @@ This document outlines the validation rules applied to the CVE Record schema as 
     - **Validation**:
         - Must have at least one English-language description.
         - Must include at least one description with at least one non-whitespace character.
+     
+-  **Field**: `containers.cna.affected.packageURL`
+      - **Validation**:
+          - If present, must be a syntactically valid PackageURL, adhering to the PackageURL schema.
+          - If present, must not contain the version component of a PackageURL.  
