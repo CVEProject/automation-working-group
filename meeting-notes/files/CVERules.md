@@ -91,4 +91,9 @@ This document outlines the validation rules applied to the CVE Record schema as 
 -  **Field**: `containers.cna.affected.packageURL`
       - **Validation**:
           - If present, must be a syntactically valid PackageURL, adhering to the PackageURL schema.
-          - If present, must not contain the version component of a PackageURL.  
+          - If present, must not contain the version component of a PackageURL.
+            
+- **Field**: `containers.cna.timeline.time`
+    - **Validation**:
+        - Prevents timestamps from having invalid timezone offsets. i.e. "2026-01-01T00:00:00.123456+25:00"
+  
