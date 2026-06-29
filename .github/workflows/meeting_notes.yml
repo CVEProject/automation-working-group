@@ -21,6 +21,17 @@ jobs:
 
       - name: Create meeting notes document
         run: |
+
+          ## Determine ISO week number (01–53)
+          week=$(date -u +%V)
+          echo "ISO week: $week"
+
+          # Skip even weeks (so this week runs, next week skips)
+          if [ $((week % 2)) -eq 0 ]; then
+             echo "Off week, skipping meeting notes creation."
+             exit 0
+          fi
+        
           git config --local user.name "AWG[bot]"
           git config --local user.email "AWG[bot]@users.noreply.github.com"
           next_meeting=$(date -d "next tue" +%F)
